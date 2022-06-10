@@ -1,0 +1,25 @@
+version: '2'
+services:
+  backend-server:
+    container_name: webshop-backend
+    build:
+      context: webshop-backend
+      dockerfile: Dockerfile
+    image: webshop-backend:latest
+    ports:
+      - 18080:8080
+    networks:
+      - local
+  frontend-server:
+    container_name: webshop-frontend
+    build:
+      context: webshop-frontend
+      dockerfile: Dockerfile
+    image: webshop-frontend:latest
+    ports:
+      - 18085:8085
+    networks:
+      - local
+networks:
+  local:
+    driver: bridge

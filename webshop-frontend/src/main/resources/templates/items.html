@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>View Items</title>
+    <!-- CSS only -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+<div class="container-fluid">
+    <h2>Item List</h2>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Size</th>
+            <th scope="col">Color</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item: ${items}">
+            <td th:text="${item.id}"/>
+            <td th:text="${item.brand}"/>
+            <td th:text="${item.size}"/>
+            <td th:text="${item.color}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
